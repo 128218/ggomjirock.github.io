@@ -1,0 +1,115 @@
+#body-layout {
+    .main-area {
+        position: relative;
+        width: fit-content;
+        padding: 30px 25px 25px 30px;
+
+        ol {
+            position: absolute;
+
+            li {
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                counter-increment: list-number;
+
+                &:before {
+                    content: counter(list-number);
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: #616161;
+                }
+            }
+
+            &.col-list {
+                display: flex;
+                top: 10px;
+            }
+
+            &.row-list {
+                left: 5px;
+            }
+        }
+
+        .grid-area {
+            .grid-box {
+                display: flex;
+
+                &:first-child {
+                    >div {
+                        border-top: 1px solid #e0e0e0;
+                    }
+                }
+
+                >div {
+                    box-sizing: border-box;
+                    width: 20px;
+                    height: 20px;
+                    border-right: 1px solid #e0e0e0;
+                    border-bottom: 1px solid #e0e0e0;
+
+                    &:first-child {
+                        border-left: 1px solid #e0e0e0;
+                    }
+                }
+            }
+        }
+
+        button {
+            position: absolute;
+            border: 1px solid #444444;
+            background-color: #fff;
+            border-radius: 5px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #616161;
+                color: #fff;
+            }
+
+            &.add_row_btn {
+                left: 6px;
+                bottom: 3px;
+            }
+
+            &.add_col_btn {
+                top: 8px;
+                right: 0;
+
+            }
+        }
+    }
+
+    // 팝업 디자인
+    .mini_pop {
+        display: none;
+        position: absolute;
+        border-radius: 4px;
+        box-shadow: 2px 6px 10px 2px rgb(136 136 136 / 30%);
+        font-size: 13px;
+        overflow: hidden;
+
+        ul {
+            li {
+                padding: 8px 12px;
+                border-bottom: 1px solid #ddd;
+                cursor: pointer;
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+
+                &:hover {
+                    background-color: #ddd;
+                }
+            }
+        }
+    }
+}
